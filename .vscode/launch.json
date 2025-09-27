@@ -1,0 +1,90 @@
+{
+    "version": "0.2.0",
+    "configurations": [    
+      {
+        "name": "Python: pysc2 Agent Debug",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pysc2.bin.agent",
+        "args": [
+          "--map", "pvz_task1_level1",
+          "--agent_race", "protoss",
+          "--parallel", "1",
+          "--agent", "llm_pysc2.bin.experiment_llm_pysc2.MainAgentLLMPysc2",
+          "--feature_screen_size", "256",
+          "--feature_minimap_size", "64",
+          "--rgb_screen_size", "0",
+          "--rgb_minimap_size", "0",
+          "--render"
+        ],
+        "console": "integratedTerminal",
+        "subProcess": true,
+        "showReturnValue": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}",
+          "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+        },
+        "justMyCode": false
+      },
+      {
+        "name": "Python: gmzz Agent Debug",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pysc2.bin.agent",
+        "args": [
+          "--map", "gmzz02_te",
+          "--agent_race", "terran",
+          "--parallel", "1",
+          "--agent", "llm_pysc2.bin.experiment_llm_36strat.MainAgentTSSPysc2",
+          "--feature_screen_size", "256",
+          "--feature_minimap_size", "64",
+          "--rgb_screen_size", "0",
+          "--rgb_minimap_size", "0",
+          "--render"
+        ],
+        "console": "integratedTerminal",
+        "subProcess": true,
+        "showReturnValue": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}",
+          "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+        },
+        "justMyCode": false
+      },
+      {
+        "name": "Python: pysc2 Replay Actions Debug",
+        "type": "debugpy",
+        "request": "launch",
+        "module": "pysc2.bin.replay_actions",
+        "args": [
+          "--replays", "C:\\Users\\Dexin\\Documents\\StarCraft II\\Replays\\Multiplayer\\Just Another StarCraft II Map (67).SC2Replay",
+        ],
+        "console": "integratedTerminal",
+        "subProcess": true,
+        "showReturnValue": true,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}",
+          "PROTOCOL_BUFFERS_PYTHON_IMPLEMENTATION": "python"
+        },
+        "justMyCode": false
+      },
+      {
+        "name": "Python: Train QMIX Agent",
+        "type": "debugpy",
+        "request": "launch",
+        "program": "${workspaceFolder}/src/main.py",
+        "args": [
+          "--config=qmix",
+          "--env-config=sc2te",
+          "with",
+          "env_args.map_name=dhls_te"
+        ],
+        "console": "integratedTerminal",
+        "justMyCode": false,
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}"
+        }
+      }
+    ]
+}
+
